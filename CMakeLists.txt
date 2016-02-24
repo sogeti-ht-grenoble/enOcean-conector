@@ -8,11 +8,13 @@ endif()
 project(Gateway C CXX)
 
 #Ensure cross compilation not used by default
-option(CROSS_COMPILE "Enable target compilation" OFF)
+option(PI "Enable Raspberry Pi compilation" OFF)
 
 enable_testing()
 
-#include(Pi.cmake)
+if(PI)
+	include(Pi.cmake)
+endif()
 include(Output.cmake)
 include(UT.cmake) 
 include(Externals.cmake)
