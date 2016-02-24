@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 2.8)
+
+set(CMAKE_BUILD_TYPE "Debug")
+
+set(COMMON_CXX_FLAGS "-fmessage-length=0 -pipe -Wall -Wextra -Weffc++ -Werror -pedantic -std=c++98")
+
+set(CMAKE_CXX_FLAGS "${COMMON_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS_DEBUG "${COMMON_CXX_FLAGS} -g -O0")
+set(CMAKE_CXX_FLAGS_RELEASE "${COMMON_CXX_FLAGS} -DNDEBUG -03")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${COMMON_CXX_FLAGS} -DNDEBUG -g -03")
+set(CMAKE_CXX_FLAGS_MINSIZEREL "${COMMON_CXX_FLAGS} -DNDEBUG -03 -s")
